@@ -63,6 +63,7 @@ export class Rows extends Component {
                 <FlatList
                     keyExtractor={(item, index) => index.toString()}
                     data={data}
+                    scrollEnabled={false}
                     renderItem={({item, index}) => {
                         const height = heightArr && heightArr[i];
                         return (
