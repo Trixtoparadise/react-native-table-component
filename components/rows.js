@@ -59,7 +59,7 @@ export class Rows extends Component {
         const width = widthArr ? sum(widthArr) : 0;
 
         return data ? (
-            <View style={[flex && {flex}, width && {width}, styles.RowsBorder]}>
+            <View style={[flex && {flex}, width && {width}]}>
                 <FlatList
                     keyExtractor={(item, index) => index.toString()}
                     data={data}
@@ -90,7 +90,4 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         overflow: "hidden"
     }, 
-    RowsBorder: {
-        borderRadius: 15
-    }
 });
