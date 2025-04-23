@@ -22,23 +22,25 @@ export class Row extends Component {
         const width = widthArr ? sum(widthArr) : 0;
 
         return data ? (
-            <View style={[height && {height}, width && {width}, styles.row, style]}>
-                {data.map((item, i) => {
-                    const flex = flexArr && flexArr[i];
-                    const wth = widthArr && widthArr[i];
-                    return (
-                        <Cell
-                            key={i}
-                            data={item}
-                            width={wth}
-                            height={height}
-                            flex={flex}
-                            textStyle={[cellTextStyle && cellTextStyle(item), textStyle]}
-                            {...props}
-                        />
-                    );
-                })}
-            </View>
+            <TouchableOpacity onPress={() => console.log('oops!')}>
+                <View style={[height && {height}, width && {width}, styles.row, style]}>
+                    {data.map((item, i) => {
+                        const flex = flexArr && flexArr[i];
+                        const wth = widthArr && widthArr[i];
+                        return (
+                            <Cell
+                                key={i}
+                                data={item}
+                                width={wth}
+                                height={height}
+                                flex={flex}
+                                textStyle={[cellTextStyle && cellTextStyle(item), textStyle]}
+                                {...props}
+                            />
+                        );
+                    })}
+                </View>
+            </TouchableOpacity>
         ) : null;
     }
 }
@@ -67,18 +69,16 @@ export class Rows extends Component {
                     renderItem={({item, index}) => {
                         const height = heightArr && heightArr[i];
                         return (
-                            <TouchableOpacity onPress={() => console.log('oops!')}>
-                                <Row
-                                    key={index}
-                                    data={item}
-                                    widthArr={widthArr}
-                                    height={height}
-                                    flexArr={flexArr}
-                                    style={style}
-                                    textStyle={textStyle}
-                                    {...props}
-                                />
-                            </TouchableOpacity>
+                            <Row
+                                key={index}
+                                data={item}
+                                widthArr={widthArr}
+                                height={height}
+                                flexArr={flexArr}
+                                style={style}
+                                textStyle={textStyle}
+                                {...props}
+                            />
                         );
                     }}
                 />
