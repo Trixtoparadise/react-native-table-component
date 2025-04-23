@@ -67,16 +67,18 @@ export class Rows extends Component {
                     renderItem={({item, index}) => {
                         const height = heightArr && heightArr[i];
                         return (
-                            <Row
-                                key={index}
-                                data={item}
-                                widthArr={widthArr}
-                                height={height}
-                                flexArr={flexArr}
-                                style={style}
-                                textStyle={textStyle}
-                                {...props}
-                            />
+                            <TouchableOpacity onPress={() => console.log('oops!')}>
+                                <Row
+                                    key={index}
+                                    data={item}
+                                    widthArr={widthArr}
+                                    height={height}
+                                    flexArr={flexArr}
+                                    style={style}
+                                    textStyle={textStyle}
+                                    {...props}
+                                />
+                            </TouchableOpacity>
                         );
                     }}
                 />
