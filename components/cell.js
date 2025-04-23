@@ -19,7 +19,7 @@ export class Cell extends Component {
         const textDom = React.isValidElement(data) ? (
             data
         ) : (
-            <Text style={[textStyle, styles.text]} {...props}>
+            <Text numberOfLines={1} ellipsizeMode="tail" style={[textStyle, styles.text]} {...props}>
                 {data}
             </Text>
         );
