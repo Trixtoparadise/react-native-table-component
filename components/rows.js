@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View, StyleSheet, FlatList} from "react-native";
+import {View, StyleSheet, FlatList, TouchableOpacity} from "react-native";
 import PropTypes from "prop-types";
 
 import {Cell} from "./cell";
@@ -67,16 +67,18 @@ export class Rows extends Component {
                     renderItem={({item, index}) => {
                         const height = heightArr && heightArr[i];
                         return (
-                            <Row
-                                key={index}
-                                data={item}
-                                widthArr={widthArr}
-                                height={height}
-                                flexArr={flexArr}
-                                style={style}
-                                textStyle={textStyle}
-                                {...props}
-                            />
+                            <TouchableOpacity onPress={() => console.log('oops!')}>
+                                <Row
+                                    key={index}
+                                    data={item}
+                                    widthArr={widthArr}
+                                    height={height}
+                                    flexArr={flexArr}
+                                    style={style}
+                                    textStyle={textStyle}
+                                    {...props}
+                                />
+                            </TouchableOpacity>
                         );
                     }}
                 />
