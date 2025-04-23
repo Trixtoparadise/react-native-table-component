@@ -51,7 +51,7 @@ export class Rows extends Component {
         heightArr: PropTypes.arrayOf(PropTypes.number),
         flexArr: PropTypes.arrayOf(PropTypes.number),
         textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-        rowFunction: PropTypes.func.isRequired,
+        rowFunction: PropTypes.func,
     };
 
     render() {
