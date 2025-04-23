@@ -50,8 +50,7 @@ export class Rows extends Component {
         widthArr: PropTypes.arrayOf(PropTypes.number),
         heightArr: PropTypes.arrayOf(PropTypes.number),
         flexArr: PropTypes.arrayOf(PropTypes.number),
-        textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-        rowFunction: PropTypes.func,
+        textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
     };
 
     render() {
@@ -68,7 +67,7 @@ export class Rows extends Component {
                     renderItem={({item, index}) => {
                         const height = heightArr && heightArr[i];
                         return (
-                            <TouchableOpacity onPress={rowFunction}>
+                            <TouchableOpacity onPress={props.rowFunction}>
                                 <Row
                                     key={index}
                                     data={item}
