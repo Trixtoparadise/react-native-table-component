@@ -22,25 +22,23 @@ export class Row extends Component {
         const width = widthArr ? sum(widthArr) : 0;
 
         return data ? (
-            <TouchableOpacity onPress={() => console.log('oops!')}>
-                <View style={[height && {height}, width && {width}, styles.row, style]}>
-                    {data.map((item, i) => {
-                        const flex = flexArr && flexArr[i];
-                        const wth = widthArr && widthArr[i];
-                        return (
-                            <Cell
-                                key={i}
-                                data={item}
-                                width={wth}
-                                height={height}
-                                flex={flex}
-                                textStyle={[cellTextStyle && cellTextStyle(item), textStyle]}
-                                {...props}
-                            />
-                        );
-                    })}
-                </View>
-            </TouchableOpacity>
+            <View style={[height && {height}, width && {width}, styles.row, style]}>
+                {data.map((item, i) => {
+                    const flex = flexArr && flexArr[i];
+                    const wth = widthArr && widthArr[i];
+                    return (
+                        <Cell
+                            key={i}
+                            data={item}
+                            width={wth}
+                            height={height}
+                            flex={flex}
+                            textStyle={[cellTextStyle && cellTextStyle(item), textStyle]}
+                            {...props}
+                        />
+                    );
+                })}
+            </View>
         ) : null;
     }
 }

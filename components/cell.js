@@ -19,9 +19,11 @@ export class Cell extends Component {
         const textDom = React.isValidElement(data) ? (
             data
         ) : (
-            <Text numberOfLines={1} ellipsizeMode="tail" style={[textStyle, styles.text]} {...props}>
-                {data}
-            </Text>
+            <TouchableOpacity onPress={() => console.log('oops!')}>
+                <Text numberOfLines={1} ellipsizeMode="tail" style={[textStyle, styles.text]} {...props}>
+                    {data}
+                </Text>
+            </TouchableOpacity>
         );
         const borderTopWidth = (borderStyle && borderStyle.borderWidth) || 0;
         const borderRightWidth = borderTopWidth;
