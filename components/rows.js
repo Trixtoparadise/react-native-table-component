@@ -68,7 +68,7 @@ export class Rows extends Component {
                     renderItem={({item, index}) => {
                         const height = heightArr && heightArr[i];
                         return (
-                            <TouchableOpacity onPress={() => navigation(screen, {item: item})}>
+                            <TouchableOpacity onPress={() => navigation(props.screen, {item: item})}>
                                 <Row
                                     key={index}
                                     data={item}
