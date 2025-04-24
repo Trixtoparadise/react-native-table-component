@@ -57,6 +57,7 @@ export class Rows extends Component {
         const {data, style, widthArr, heightArr, flexArr, textStyle, ...props} = this.props;
         const flex = flexArr ? sum(flexArr) : 0;
         const width = widthArr ? sum(widthArr) : 0;
+        let navigation = props.navigation
 
         return data ? (
             <View style={[flex && {flex}, width && {width}]}>
@@ -67,7 +68,7 @@ export class Rows extends Component {
                     renderItem={({item, index}) => {
                         const height = heightArr && heightArr[i];
                         return (
-                            <TouchableOpacity onPress={() => console.log(item)}>
+                            <TouchableOpacity onPress={() => navigation(screen, {item: item})}>
                                 <Row
                                     key={index}
                                     data={item}
